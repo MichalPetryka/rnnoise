@@ -355,12 +355,6 @@ endif()
 
 add_executable(dump_features
     src/dump_features.c
-    src/denoise.c
-    src/pitch.c
-    src/celt_lpc.c
-    src/kiss_fft.c
-    src/parse_lpcnet_weights.c
-    src/rnnoise_tables.c
 )
 
 target_compile_definitions(dump_features
@@ -373,6 +367,11 @@ target_include_directories(dump_features
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
+
+target_link_libraries(dump_features
+    PRIVATE
+        rnnoise
 )
 
 add_executable(dump_weights_blob
