@@ -29,11 +29,14 @@
 #include "config.h"
 #endif
 
+#define _USE_MATH_DEFINES
+#ifndef _WIN32
+#include <unistd.h>
+#endif
 
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <errno.h>
 #include "rnnoise.h"
 #include "common.h"
