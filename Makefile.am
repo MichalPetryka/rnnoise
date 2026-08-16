@@ -49,6 +49,7 @@ if RNN_ENABLE_X86_RTCD
 RNNOISE_SOURCES += $(X86_RTCD) \
                    $(RNNOISE_SOURCES_SSE4_2) \
                    $(RNNOISE_SOURCES_AVX2)
+endif
 
 librnnoise_la_SOURCES = $(RNNOISE_SOURCES)
 librnnoise_la_LIBADD = $(DEPS_LIBS) $(lrintf_lib) $(LIBM)
